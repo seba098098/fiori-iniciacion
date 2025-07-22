@@ -5,7 +5,7 @@ import json
 from datetime import datetime
 
 # ==== CONFIGURACIÓN ====
-GITHUB_TOKEN = ""  # <-- Coloca tu token válido aquí
+GITHUB_TOKEN = "."  # <-- Coloca tu token válido aquí
 REPO_OWNER = "CVEProject"
 REPO_NAME = "cvelistV5"
 BRANCH = "main"

@@ -6,22 +6,25 @@ import csv
 from datetime import datetime
 
 # ==== CONFIGURACIÓN ====
-GITHUB_TOKEN = ""  # Reemplaza con tu token válido
+GITHUB_TOKEN = "."
 REPO_OWNER = "CVEProject"
 REPO_NAME = "cvelistV5"
 BRANCH = "main"
 BASE_URL = "https://api.github.com"
-BASE_PATH = "cves"
 HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"} if GITHUB_TOKEN else {}
-MAX_CVES = 20  # ← Cambia esto para aumentar/disminuir los CVEs procesados
 
-# Archivos de salida
-OUTPUT_DIR = "cves_data"
-JSON_FILE = os.path.join(OUTPUT_DIR, "consolidado.json")
-CSV_FILE = os.path.join(OUTPUT_DIR, "consolidado.csv")
-os.makedirs(OUTPUT_DIR, exist_ok=True)
+# Rutas
+OUTPUT_DIR = "."
+ARCHIVOS_DIR = os.path.join(OUTPUT_DIR, "descargas_cves")
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, "consolidado.json")
+SHA_FILE = os.path.join(OUTPUT_DIR, "registro_sha.csv")
 
-# ==== FUNCIONES ====
+# Crear carpetas necesarias
+os.makedirs(ARCHIVOS_DIR, exist_ok=True)
+
+# ==== FUNCIONES AUXILIARES ====
+
+
 def github_api_request(url, params=None):
     while True:
         try:
@@ -38,92 +41,122 @@ def github_api_request(url, params=None):
             print(f"Error al consultar {url}: {e}")
             time.sleep(5)
 
-def list_directory(path):
-    url = f"{BASE_URL}/repos/{REPO_OWNER}/{REPO_NAME}/contents/{path}?ref={BRANCH}"
-    return github_api_request(url)
 
-def download_file(download_url):
-    response = requests.get(download_url, headers=HEADERS)
+def get_all_json_files_from_repo():
+    print("🔍 Obteniendo árbol completo del repositorio...")
+    url_branch = f"{BASE_URL}/repos/{REPO_OWNER}/{REPO_NAME}/branches/{BRANCH}"
+    branch_info = github_api_request(url_branch)
+    sha = branch_info["commit"]["commit"]["tree"]["sha"]
+
+    url_tree = f"{BASE_URL}/repos/{REPO_OWNER}/{REPO_NAME}/git/trees/{sha}?recursive=1"
+    tree = github_api_request(url_tree)
+
+    json_files = [
+        item for item in tree.get("tree", [])
+        if item["path"].startswith("cves/") and item["path"].endswith(".json") and item["type"] == "blob"
+    ]
+
+    print(f"📄 Se encontraron {len(json_files)} archivos JSON.")
+    return json_files
+
+
+def load_sha_registry():
+    if not os.path.exists(SHA_FILE):
+        return {}
+    sha_registry = {}
+    with open(SHA_FILE, newline='', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            sha_registry[row["path"]] = row["sha"]
+    return sha_registry
+
+
+def save_sha_registry(sha_dict):
+    with open(SHA_FILE, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["path", "sha", "fecha"])
+        writer.writeheader()
+        for path, (sha, fecha) in sha_dict.items():
+            writer.writerow({"path": path, "sha": sha, "fecha": fecha})
+
+
+def download_file_to_disk(path, local_path):
+    raw_url = f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/{path}"
+    response = requests.get(raw_url, headers=HEADERS)
     response.raise_for_status()
-    return response.json()
+    os.makedirs(os.path.dirname(local_path), exist_ok=True)
+    with open(local_path, "w", encoding="utf-8") as f:
+        f.write(response.text)
+    return json.loads(response.text)
 
-def save_json(data):
-    with open(JSON_FILE, "w", encoding="utf-8") as f:
+
+def load_existing_data():
+    if os.path.exists(OUTPUT_FILE):
+        with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return []
+
+
+def save_consolidated_data(data):
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
 
-def save_csv(data):
-    with open(CSV_FILE, "w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
-        writer.writerow(["cveId", "datePublished", "assignerShortName", "cvssMetrics", "description"])
-
-        for item in data:
-            metadata = item.get("cveMetadata", {})
-            cve_id = metadata.get("cveId", "")
-            date_published = metadata.get("datePublished", "")
-            assigner = metadata.get("assignerShortName", "")
-
-            # Aplana CVSS
-            metrics = item.get("containers", {}).get("cna", {}).get("metrics", [])
-            cvss_text = ", ".join([json.dumps(m) for m in metrics]) if metrics else ""
-
-            # Aplana descripción
-            descriptions = item.get("containers", {}).get("cna", {}).get("descriptions", [])
-            description_text = ", ".join([d.get("value", "") for d in descriptions]) if descriptions else ""
-
-            writer.writerow([cve_id, date_published, assigner, cvss_text, description_text])
 
 # ==== PROCESAMIENTO PRINCIPAL ====
-def process_repository():
-    current_year = datetime.now().year
-    years = [str(year) for year in range(1999, current_year + 1)]
-    collected = []
-    seen_ids = set()
 
-    for year in years:
-        print(f"\nProcesando año {year}...")
-        try:
-            year_folders = list_directory(f"{BASE_PATH}/{year}")
-        except Exception as e:
-            print(f"  ⚠ Error en el año {year}: {e}")
+def process_repository():
+    json_files = get_all_json_files_from_repo()
+    consolidated_data = load_existing_data()
+    sha_registry = load_sha_registry()
+    updated_sha_registry = {}
+
+    print("🚀 Comenzando descarga de archivos JSON...")
+
+    for i, file in enumerate(json_files, 1):
+        path = file["path"]
+        sha = file["sha"]
+        cve_id = path.split("/")[-1].replace(".json", "")
+
+        # Si el SHA es igual, no se ha modificado
+        if path in sha_registry and sha_registry[path] == sha:
+            updated_sha_registry[path] = (sha, datetime.now().isoformat())
             continue
 
-        for folder in year_folders:
-            if folder["type"] != "dir":
-                continue
+        try:
+            local_path = os.path.join(ARCHIVOS_DIR, path.replace("/", os.sep))
+            cve_data = download_file_to_disk(path, local_path)
 
-            try:
-                files = list_directory(folder["path"])
-            except Exception as e:
-                print(f"  ⚠ Error al listar {folder['path']}: {e}")
-                continue
+            # Buscar si el CVE ya está en el consolidado (por ID)
+            index = next(
+                (i for i, entry in enumerate(consolidated_data)
+                 if entry.get("cveMetadata", {}).get("cveId") == cve_id),
+                None
+            )
 
-            for file in files:
-                if file["type"] != "file" or not file["name"].endswith(".json"):
-                    continue
+            if index is not None:
+                # Si ya existe, reemplazarlo con la nueva versión
+                consolidated_data[index] = cve_data
+                print(f"🔄 CVE actualizado: {cve_id}")
+            else:
+                # Si no existe, agregarlo nuevo
+                consolidated_data.append(cve_data)
+                print(f"➕ CVE agregado: {cve_id}")
 
-                cve_id = file["name"].replace(".json", "")
-                if cve_id in seen_ids:
-                    continue
+            updated_sha_registry[path] = (sha, datetime.now().isoformat())
 
-                try:
-                    cve_data = download_file(file["download_url"])
-                    collected.append(cve_data)
-                    seen_ids.add(cve_id)
-                    print(f"  ✅ {cve_id} añadido ({len(collected)}/{MAX_CVES})")
+            if len(consolidated_data) % 100 == 0:
+                save_consolidated_data(consolidated_data)
+                print(f"💾 Guardados {len(consolidated_data)} registros...")
 
-                    if len(collected) >= MAX_CVES:
-                        save_json(collected)
-                        save_csv(collected)
-                        print(f"\n✅ Finalizado: {len(collected)} CVEs guardados en JSON y CSV")
-                        return
+        except Exception as e:
+            print(f"❌ Error con {path}: {e}")
+            continue
 
-                except Exception as e:
-                    print(f"  ❌ Error en {file['path']}: {e}")
-                    continue
+    # Guardar todo al final
+    save_consolidated_data(consolidated_data)
+    save_sha_registry(updated_sha_registry)
 
-    print(f"\n⚠ Se alcanzó el final sin llegar a {MAX_CVES} CVEs.")
-    save_json(collected)
-    save_csv(collected)
+    print(f"\n✅ Proceso completado. Se guardaron {len(consolidated_data)} CVEs en '{OUTPUT_FILE}'.")
+
 
 # ==== EJECUCIÓN ====
 if __name__ == "__main__":
