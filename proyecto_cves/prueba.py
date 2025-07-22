@@ -6,7 +6,7 @@ import csv
 from datetime import datetime
 
 # ==== CONFIGURACIÓN ====
-GITHUB_TOKEN = "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"  # Reemplaza con tu token válido
+GITHUB_TOKEN = ""  # Reemplaza con tu token válido
 REPO_OWNER = "CVEProject"
 REPO_NAME = "cvelistV5"
 BRANCH = "main"
