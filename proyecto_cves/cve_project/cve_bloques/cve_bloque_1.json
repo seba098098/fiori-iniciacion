@@ -1,0 +1,1337 @@
+[
+  {
+    "id": "CVE-2025-54597",
+    "sourceIdentifier": "cve@mitre.org",
+    "vulnStatus": "Received",
+    "published": "2025-07-27T03:15:26.453",
+    "lastModified": "2025-07-27T03:15:26.453",
+    "descriptions": [
+      {
+        "lang": "en",
+        "value": "LinuxServer.io Heimdall before 2.7.3 allows XSS via the q parameter."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/linuxserver/Heimdall/commit/d1a96dd752ba30dc56380400dd2587d8abb8e9d1",
+        "source": "cve@mitre.org",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/linuxserver/Heimdall/compare/v2.7.2...v2.7.3",
+        "source": "cve@mitre.org",
+        "tags": []
+      }
+    ],
+    "metrics": {
+      "cvssMetricV40": [],
+      "cvssMetricV31": [
+        {
+          "source": "cve@mitre.org",
+          "type": "Secondary",
+          "cvssData": {
+            "version": "3.1",
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
+            "attackVector": "NETWORK",
+            "attackComplexity": "LOW",
+            "privilegesRequired": "NONE",
+            "userInteraction": "NONE",
+            "scope": "CHANGED",
+            "confidentialityImpact": "LOW",
+            "integrityImpact": "LOW",
+            "availabilityImpact": "NONE",
+            "baseScore": 7.2,
+            "baseSeverity": "HIGH"
+          },
+          "exploitabilityScore": 3.9,
+          "impactScore": 2.7
+        }
+      ],
+      "cvssMetricV30": [],
+      "cvssMetricV2": []
+    },
+    "weaknesses": [
+      {
+        "source": "cve@mitre.org",
+        "type": "Primary",
+        "description": [
+          {
+            "lang": "en",
+            "value": "CWE-79"
+          }
+        ]
+      }
+    ],
+    "configurations": [],
+    "vendorComments": [],
+    "cveTags": []
+  },
+  {
+    "id": "CVE-2025-54596",
+    "sourceIdentifier": "cve@mitre.org",
+    "vulnStatus": "Received",
+    "published": "2025-07-25T17:15:32.843",
+    "lastModified": "2025-07-25T17:15:32.843",
+    "descriptions": [
+      {
+        "lang": "en",
+        "value": "Abnormal Security /v1.0/rbac/users_v2/{USER_ID}/ before 2025-02-19 allows downgrading the privileges of other user accounts."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://bugcrowd.com/disclosures/b2406123-c02d-47cf-bcf1-8af57e1de526/no-rbac-validation-on-api-requests-user-management",
+        "source": "cve@mitre.org",
+        "tags": []
+      }
+    ],
+    "metrics": {
+      "cvssMetricV40": [],
+      "cvssMetricV31": [
+        {
+          "source": "cve@mitre.org",
+          "type": "Secondary",
+          "cvssData": {
+            "version": "3.1",
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+            "attackVector": "NETWORK",
+            "attackComplexity": "LOW",
+            "privilegesRequired": "LOW",
+            "userInteraction": "NONE",
+            "scope": "UNCHANGED",
+            "confidentialityImpact": "NONE",
+            "integrityImpact": "LOW",
+            "availabilityImpact": "NONE",
+            "baseScore": 4.3,
+            "baseSeverity": "MEDIUM"
+          },
+          "exploitabilityScore": 2.8,
+          "impactScore": 1.4
+        }
+      ],
+      "cvssMetricV30": [],
+      "cvssMetricV2": []
+    },
+    "weaknesses": [
+      {
+        "source": "cve@mitre.org",
+        "type": "Primary",
+        "description": [
+          {
+            "lang": "en",
+            "value": "CWE-863"
+          }
+        ]
+      }
+    ],
+    "configurations": [],
+    "vendorComments": [],
+    "cveTags": []
+  },
+  {
+    "id": "CVE-2025-54569",
+    "sourceIdentifier": "cve@mitre.org",
+    "vulnStatus": "Received",
+    "published": "2025-07-28T13:15:30.350",
+    "lastModified": "2025-07-28T13:15:30.350",
+    "descriptions": [
+      {
+        "lang": "en",
+        "value": "In Malwarebytes Binisoft Windows Firewall Control before 6.16.0.0, the installer is vulnerable to local privilege escalation."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.malwarebytes.com/secure/cves/cve-2025-54569",
+        "source": "cve@mitre.org",
+        "tags": []
+      }
+    ],
+    "metrics": {
+      "cvssMetricV40": [],
+      "cvssMetricV31": [
+        {
+          "source": "cve@mitre.org",
+          "type": "Secondary",
+          "cvssData": {
+            "version": "3.1",
+            "vectorString": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N",
+            "attackVector": "LOCAL",
+            "attackComplexity": "HIGH",
+            "privilegesRequired": "NONE",
+            "userInteraction": "NONE",
+            "scope": "CHANGED",
+            "confidentialityImpact": "LOW",
+            "integrityImpact": "LOW",
+            "availabilityImpact": "NONE",
+            "baseScore": 4.5,
+            "baseSeverity": "MEDIUM"
+          },
+          "exploitabilityScore": 1.4,
+          "impactScore": 2.7
+        }
+      ],
+      "cvssMetricV30": [],
+      "cvssMetricV2": []
+    },
+    "weaknesses": [
+      {
+        "source": "cve@mitre.org",
+        "type": "Primary",
+        "description": [
+          {
+            "lang": "en",
+            "value": "CWE-863"
+          }
+        ]
+      }
+    ],
+    "configurations": [
+      {
+        "nodes": [
+          {
+            "operator": "OR",
+            "negate": false,
+            "cpeMatch": [
+              {
+                "vulnerable": true,
+                "criteria": "cpe:2.3:a:malwarebytes:binisoft_windows_firewall_control:*:*:*:*:*:*:*:*",
+                "matchCriteriaId": "7d3cf462-6018-47bd-b54f-9b53d171fdbe",
+                "versionEndExcluding": "6.16.0.0"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "vendorComments": [],
+    "cveTags": []
+  },
+  {
+    "id": "CVE-2025-54568",
+    "sourceIdentifier": "cve@mitre.org",
+    "vulnStatus": "Awaiting Analysis",
+    "published": "2025-07-25T04:16:13.880",
+    "lastModified": "2025-07-25T15:29:19.837",
+    "descriptions": [
+      {
+        "lang": "en",
+        "value": "Akamai Rate Control alpha before 2025 allows attackers to send requests above the stipulated thresholds because the rate is measured separately for each edge node."
+      }
+    ],
+    "references": [
+      {
+        "url": "http://techdocs.akamai.com/app-api-protector/docs/improved-rate-accounting",
+        "source": "cve@mitre.org",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/geo-chen/Akamai/blob/main/Edge%20Hopping.md",
+        "source": "cve@mitre.org",
+        "tags": []
+      }
+    ],
+    "metrics": {
+      "cvssMetricV40": [],
+      "cvssMetricV31": [
+        {
+          "source": "cve@mitre.org",
+          "type": "Secondary",
+          "cvssData": {
+            "version": "3.1",
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "attackVector": "NETWORK",
+            "attackComplexity": "HIGH",
+            "privilegesRequired": "NONE",
+            "userInteraction": "NONE",
+            "scope": "UNCHANGED",
+            "confidentialityImpact": "NONE",
+            "integrityImpact": "NONE",
+            "availabilityImpact": "LOW",
+            "baseScore": 3.7,
+            "baseSeverity": "LOW"
+          },
+          "exploitabilityScore": 2.2,
+          "impactScore": 1.4
+        }
+      ],
+      "cvssMetricV30": [],
+      "cvssMetricV2": []
+    },
+    "weaknesses": [
+      {
+        "source": "cve@mitre.org",
+        "type": "Primary",
+        "description": [
+          {
+            "lang": "en",
+            "value": "CWE-684"
+          }
+        ]
+      }
+    ],
+    "configurations": [],
+    "vendorComments": [],
+    "cveTags": [
+      {
+        "sourceIdentifier": "cve@mitre.org",
+        "tags": [
+          "exclusively-hosted-service"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "CVE-2025-54566",
+    "sourceIdentifier": "cve@mitre.org",
+    "vulnStatus": "Awaiting Analysis",
+    "published": "2025-07-25T03:15:33.090",
+    "lastModified": "2025-07-25T15:29:19.837",
+    "descriptions": [
+      {
+        "lang": "en",
+        "value": "hw/pci/pcie_sriov.c in QEMU through 10.0.3 has a migration state inconsistency, a related issue to CVE-2024-26327."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://lore.kernel.org/qemu-devel/20250713-wmask-v1-1-4c744cdb32c0@rsg.ci.i.u-tokyo.ac.jp/",
+        "source": "cve@mitre.org",
+        "tags": []
+      }
+    ],
+    "metrics": {
+      "cvssMetricV40": [],
+      "cvssMetricV31": [
+        {
+          "source": "cve@mitre.org",
+          "type": "Secondary",
+          "cvssData": {
+            "version": "3.1",
+            "vectorString": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L",
+            "attackVector": "ADJACENT_NETWORK",
+            "attackComplexity": "HIGH",
+            "privilegesRequired": "NONE",
+            "userInteraction": "NONE",
+            "scope": "UNCHANGED",
+            "confidentialityImpact": "NONE",
+            "integrityImpact": "LOW",
+            "availabilityImpact": "LOW",
+            "baseScore": 4.2,
+            "baseSeverity": "MEDIUM"
+          },
+          "exploitabilityScore": 1.6,
+          "impactScore": 2.5
+        }
+      ],
+      "cvssMetricV30": [],
+      "cvssMetricV2": []
+    },
+    "weaknesses": [
+      {
+        "source": "cve@mitre.org",
+        "type": "Primary",
+        "description": [
+          {
+            "lang": "en",
+            "value": "CWE-642"
+          }
+        ]
+      }
+    ],
+    "configurations": [
+      {
+        "nodes": [
+          {
+            "operator": "OR",
+            "negate": false,
+            "cpeMatch": [
+              {
+                "vulnerable": true,
+                "criteria": "cpe:2.3:a:qemu:qemu:*:*:*:*:*:*:*:*",
+                "matchCriteriaId": "96003913-d984-4b3c-bfcd-091b1df04fda",
+                "versionStartIncluding": "10.0.0",
+                "versionEndIncluding": "10.0.3"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "vendorComments": [],
+    "cveTags": []
+  },
+  {
+    "id": "CVE-2025-54558",
+    "sourceIdentifier": "cve@mitre.org",
+    "vulnStatus": "Awaiting Analysis",
+    "published": "2025-07-25T02:15:24.433",
+    "lastModified": "2025-07-25T15:29:19.837",
+    "descriptions": [
+      {
+        "lang": "en",
+        "value": "OpenAI Codex CLI before 0.9.0 auto-approves ripgrep (aka rg) execution even with the --pre or --hostname-bin or --search-zip or -z flag."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://github.com/openai/codex/commit/6cf4b96f9dbbef8a94acc1ff703eb118481514d8",
+        "source": "cve@mitre.org",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/openai/codex/compare/rust-v0.8.0...rust-v0.9.0",
+        "source": "cve@mitre.org",
+        "tags": []
+      },
+      {
+        "url": "https://github.com/openai/codex/pull/1644",
+        "source": "cve@mitre.org",
+        "tags": []
+      }
+    ],
+    "metrics": {
+      "cvssMetricV40": [],
+      "cvssMetricV31": [
+        {
+          "source": "cve@mitre.org",
+          "type": "Secondary",
+          "cvssData": {
+            "version": "3.1",
+            "vectorString": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "attackVector": "LOCAL",
+            "attackComplexity": "HIGH",
+            "privilegesRequired": "NONE",
+            "userInteraction": "REQUIRED",
+            "scope": "CHANGED",
+            "confidentialityImpact": "LOW",
+            "integrityImpact": "LOW",
+            "availabilityImpact": "NONE",
+            "baseScore": 4.1,
+            "baseSeverity": "MEDIUM"
+          },
+          "exploitabilityScore": 1.0,
+          "impactScore": 2.7
+        }
+      ],
+      "cvssMetricV30": [],
+      "cvssMetricV2": []
+    },
+    "weaknesses": [
+      {
+        "source": "cve@mitre.org",
+        "type": "Primary",
+        "description": [
+          {
+            "lang": "en",
+            "value": "CWE-829"
+          }
+        ]
+      }
+    ],
+    "configurations": [],
+    "vendorComments": [],
+    "cveTags": []
+  },
+  {
+    "id": "CVE-2025-54538",
+    "sourceIdentifier": "cve@jetbrains.com",
+    "vulnStatus": "Received",
+    "published": "2025-07-28T17:15:34.103",
+    "lastModified": "2025-07-28T17:15:34.103",
+    "descriptions": [
+      {
+        "lang": "en",
+        "value": "In JetBrains TeamCity before 2025.07 password exposure was possible via command line in the \"hg pull\" command"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.jetbrains.com/privacy-security/issues-fixed/",
+        "source": "cve@jetbrains.com",
+        "tags": []
+      }
+    ],
+    "metrics": {
+      "cvssMetricV40": [],
+      "cvssMetricV31": [
+        {
+          "source": "cve@jetbrains.com",
+          "type": "Secondary",
+          "cvssData": {
+            "version": "3.1",
+            "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "attackVector": "LOCAL",
+            "attackComplexity": "LOW",
+            "privilegesRequired": "LOW",
+            "userInteraction": "NONE",
+            "scope": "UNCHANGED",
+            "confidentialityImpact": "HIGH",
+            "integrityImpact": "NONE",
+            "availabilityImpact": "NONE",
+            "baseScore": 5.5,
+            "baseSeverity": "MEDIUM"
+          },
+          "exploitabilityScore": 1.8,
+          "impactScore": 3.6
+        }
+      ],
+      "cvssMetricV30": [],
+      "cvssMetricV2": []
+    },
+    "weaknesses": [
+      {
+        "source": "cve@jetbrains.com",
+        "type": "Primary",
+        "description": [
+          {
+            "lang": "en",
+            "value": "CWE-312"
+          }
+        ]
+      }
+    ],
+    "configurations": [
+      {
+        "operator": "OR",
+        "negate": false,
+        "nodes": [
+          {
+            "cpeMatch": [
+              {
+                "vulnerable": true,
+                "criteria": "cpe:2.3:a:jetbrains:teamcity:*:*:*:*:*:*:*:*",
+                "matchCriteriaId": "b9daed97-9c97-47a5-9dc3-46b68b6f117c",
+                "versionStartIncluding": "0",
+                "versionEndExcluding": "2025.07"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "vendorComments": [],
+    "cveTags": []
+  },
+  {
+    "id": "CVE-2025-54537",
+    "sourceIdentifier": "cve@jetbrains.com",
+    "vulnStatus": "Received",
+    "published": "2025-07-28T17:15:33.883",
+    "lastModified": "2025-07-28T17:15:33.883",
+    "descriptions": [
+      {
+        "lang": "en",
+        "value": "In JetBrains TeamCity before 2025.07 user credentials were stored in plain text in memory snapshots"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.jetbrains.com/privacy-security/issues-fixed/",
+        "source": "cve@jetbrains.com",
+        "tags": []
+      }
+    ],
+    "metrics": {
+      "cvssMetricV40": [],
+      "cvssMetricV31": [
+        {
+          "source": "cve@jetbrains.com",
+          "type": "Secondary",
+          "cvssData": {
+            "version": "3.1",
+            "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "attackVector": "LOCAL",
+            "attackComplexity": "LOW",
+            "privilegesRequired": "LOW",
+            "userInteraction": "NONE",
+            "scope": "UNCHANGED",
+            "confidentialityImpact": "HIGH",
+            "integrityImpact": "NONE",
+            "availabilityImpact": "NONE",
+            "baseScore": 5.5,
+            "baseSeverity": "MEDIUM"
+          },
+          "exploitabilityScore": 1.8,
+          "impactScore": 3.6
+        }
+      ],
+      "cvssMetricV30": [],
+      "cvssMetricV2": []
+    },
+    "weaknesses": [
+      {
+        "source": "cve@jetbrains.com",
+        "type": "Primary",
+        "description": [
+          {
+            "lang": "en",
+            "value": "CWE-312"
+          }
+        ]
+      }
+    ],
+    "configurations": [
+      {
+        "operator": "OR",
+        "negate": false,
+        "nodes": [
+          {
+            "cpeMatch": [
+              {
+                "vulnerable": true,
+                "criteria": "cpe:2.3:a:jetbrains:teamcity:*:*:*:*:*:*:*:*",
+                "matchCriteriaId": "52628949-c94c-4323-9202-b93d4c62aefe",
+                "versionStartIncluding": "0",
+                "versionEndExcluding": "2025.07"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "vendorComments": [],
+    "cveTags": []
+  },
+  {
+    "id": "CVE-2025-54536",
+    "sourceIdentifier": "cve@jetbrains.com",
+    "vulnStatus": "Received",
+    "published": "2025-07-28T17:15:33.657",
+    "lastModified": "2025-07-28T17:15:33.657",
+    "descriptions": [
+      {
+        "lang": "en",
+        "value": "In JetBrains TeamCity before 2025.07 a CSRF was possible on GraphQL endpoint"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.jetbrains.com/privacy-security/issues-fixed/",
+        "source": "cve@jetbrains.com",
+        "tags": []
+      }
+    ],
+    "metrics": {
+      "cvssMetricV40": [],
+      "cvssMetricV31": [
+        {
+          "source": "cve@jetbrains.com",
+          "type": "Secondary",
+          "cvssData": {
+            "version": "3.1",
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
+            "attackVector": "NETWORK",
+            "attackComplexity": "LOW",
+            "privilegesRequired": "NONE",
+            "userInteraction": "REQUIRED",
+            "scope": "UNCHANGED",
+            "confidentialityImpact": "LOW",
+            "integrityImpact": "LOW",
+            "availabilityImpact": "NONE",
+            "baseScore": 5.4,
+            "baseSeverity": "MEDIUM"
+          },
+          "exploitabilityScore": 2.8,
+          "impactScore": 2.5
+        }
+      ],
+      "cvssMetricV30": [],
+      "cvssMetricV2": []
+    },
+    "weaknesses": [
+      {
+        "source": "cve@jetbrains.com",
+        "type": "Primary",
+        "description": [
+          {
+            "lang": "en",
+            "value": "CWE-352"
+          }
+        ]
+      }
+    ],
+    "configurations": [
+      {
+        "operator": "OR",
+        "negate": false,
+        "nodes": [
+          {
+            "cpeMatch": [
+              {
+                "vulnerable": true,
+                "criteria": "cpe:2.3:a:jetbrains:teamcity:*:*:*:*:*:*:*:*",
+                "matchCriteriaId": "6228f70b-2c74-4d40-8cab-931982736b5a",
+                "versionStartIncluding": "0",
+                "versionEndExcluding": "2025.07"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "vendorComments": [],
+    "cveTags": []
+  },
+  {
+    "id": "CVE-2025-54534",
+    "sourceIdentifier": "cve@jetbrains.com",
+    "vulnStatus": "Received",
+    "published": "2025-07-28T17:15:33.250",
+    "lastModified": "2025-07-28T17:15:33.250",
+    "descriptions": [
+      {
+        "lang": "en",
+        "value": "In JetBrains TeamCity before 2025.07 reflected XSS was possible on the agentpushPreset page"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.jetbrains.com/privacy-security/issues-fixed/",
+        "source": "cve@jetbrains.com",
+        "tags": []
+      }
+    ],
+    "metrics": {
+      "cvssMetricV40": [],
+      "cvssMetricV31": [
+        {
+          "source": "cve@jetbrains.com",
+          "type": "Secondary",
+          "cvssData": {
+            "version": "3.1",
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+            "attackVector": "NETWORK",
+            "attackComplexity": "LOW",
+            "privilegesRequired": "HIGH",
+            "userInteraction": "REQUIRED",
+            "scope": "CHANGED",
+            "confidentialityImpact": "LOW",
+            "integrityImpact": "LOW",
+            "availabilityImpact": "NONE",
+            "baseScore": 4.8,
+            "baseSeverity": "MEDIUM"
+          },
+          "exploitabilityScore": 1.7,
+          "impactScore": 2.7
+        }
+      ],
+      "cvssMetricV30": [],
+      "cvssMetricV2": []
+    },
+    "weaknesses": [
+      {
+        "source": "cve@jetbrains.com",
+        "type": "Primary",
+        "description": [
+          {
+            "lang": "en",
+            "value": "CWE-79"
+          }
+        ]
+      }
+    ],
+    "configurations": [
+      {
+        "operator": "OR",
+        "negate": false,
+        "nodes": [
+          {
+            "cpeMatch": [
+              {
+                "vulnerable": true,
+                "criteria": "cpe:2.3:a:jetbrains:teamcity:*:*:*:*:*:*:*:*",
+                "matchCriteriaId": "5601ba01-3139-432a-b015-8c1f3478a8c8",
+                "versionStartIncluding": "0",
+                "versionEndExcluding": "2025.07"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "vendorComments": [],
+    "cveTags": []
+  },
+  {
+    "id": "CVE-2025-54533",
+    "sourceIdentifier": "cve@jetbrains.com",
+    "vulnStatus": "Received",
+    "published": "2025-07-28T17:15:33.033",
+    "lastModified": "2025-07-28T17:15:33.033",
+    "descriptions": [
+      {
+        "lang": "en",
+        "value": "In JetBrains TeamCity before 2025.07 improper access control allowed disclosure of build settings via VCS configuration"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.jetbrains.com/privacy-security/issues-fixed/",
+        "source": "cve@jetbrains.com",
+        "tags": []
+      }
+    ],
+    "metrics": {
+      "cvssMetricV40": [],
+      "cvssMetricV31": [
+        {
+          "source": "cve@jetbrains.com",
+          "type": "Secondary",
+          "cvssData": {
+            "version": "3.1",
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "attackVector": "NETWORK",
+            "attackComplexity": "LOW",
+            "privilegesRequired": "LOW",
+            "userInteraction": "NONE",
+            "scope": "UNCHANGED",
+            "confidentialityImpact": "LOW",
+            "integrityImpact": "NONE",
+            "availabilityImpact": "NONE",
+            "baseScore": 4.3,
+            "baseSeverity": "MEDIUM"
+          },
+          "exploitabilityScore": 2.8,
+          "impactScore": 1.4
+        }
+      ],
+      "cvssMetricV30": [],
+      "cvssMetricV2": []
+    },
+    "weaknesses": [
+      {
+        "source": "cve@jetbrains.com",
+        "type": "Primary",
+        "description": [
+          {
+            "lang": "en",
+            "value": "CWE-863"
+          }
+        ]
+      }
+    ],
+    "configurations": [
+      {
+        "operator": "OR",
+        "negate": false,
+        "nodes": [
+          {
+            "cpeMatch": [
+              {
+                "vulnerable": true,
+                "criteria": "cpe:2.3:a:jetbrains:teamcity:*:*:*:*:*:*:*:*",
+                "matchCriteriaId": "635695e1-adfe-4dfb-84ea-513915a205d2",
+                "versionStartIncluding": "0",
+                "versionEndExcluding": "2025.07"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "vendorComments": [],
+    "cveTags": []
+  },
+  {
+    "id": "CVE-2025-54532",
+    "sourceIdentifier": "cve@jetbrains.com",
+    "vulnStatus": "Received",
+    "published": "2025-07-28T17:15:32.833",
+    "lastModified": "2025-07-28T17:15:32.833",
+    "descriptions": [
+      {
+        "lang": "en",
+        "value": "In JetBrains TeamCity before 2025.07 improper access control allowed disclosure of build settings via snapshot dependencies"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.jetbrains.com/privacy-security/issues-fixed/",
+        "source": "cve@jetbrains.com",
+        "tags": []
+      }
+    ],
+    "metrics": {
+      "cvssMetricV40": [],
+      "cvssMetricV31": [
+        {
+          "source": "cve@jetbrains.com",
+          "type": "Secondary",
+          "cvssData": {
+            "version": "3.1",
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "attackVector": "NETWORK",
+            "attackComplexity": "LOW",
+            "privilegesRequired": "LOW",
+            "userInteraction": "NONE",
+            "scope": "UNCHANGED",
+            "confidentialityImpact": "LOW",
+            "integrityImpact": "NONE",
+            "availabilityImpact": "NONE",
+            "baseScore": 4.3,
+            "baseSeverity": "MEDIUM"
+          },
+          "exploitabilityScore": 2.8,
+          "impactScore": 1.4
+        }
+      ],
+      "cvssMetricV30": [],
+      "cvssMetricV2": []
+    },
+    "weaknesses": [
+      {
+        "source": "cve@jetbrains.com",
+        "type": "Primary",
+        "description": [
+          {
+            "lang": "en",
+            "value": "CWE-863"
+          }
+        ]
+      }
+    ],
+    "configurations": [
+      {
+        "operator": "OR",
+        "negate": false,
+        "nodes": [
+          {
+            "cpeMatch": [
+              {
+                "vulnerable": true,
+                "criteria": "cpe:2.3:a:jetbrains:teamcity:*:*:*:*:*:*:*:*",
+                "matchCriteriaId": "3a7d16e7-158e-499f-8b92-41af09e994c0",
+                "versionStartIncluding": "0",
+                "versionEndExcluding": "2025.07"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "vendorComments": [],
+    "cveTags": []
+  },
+  {
+    "id": "CVE-2025-54531",
+    "sourceIdentifier": "cve@jetbrains.com",
+    "vulnStatus": "Received",
+    "published": "2025-07-28T17:15:32.590",
+    "lastModified": "2025-07-28T17:15:32.590",
+    "descriptions": [
+      {
+        "lang": "en",
+        "value": "In JetBrains TeamCity before 2025.07 path traversal was possible via plugin unpacking on Windows"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.jetbrains.com/privacy-security/issues-fixed/",
+        "source": "cve@jetbrains.com",
+        "tags": []
+      }
+    ],
+    "metrics": {
+      "cvssMetricV40": [],
+      "cvssMetricV31": [
+        {
+          "source": "cve@jetbrains.com",
+          "type": "Secondary",
+          "cvssData": {
+            "version": "3.1",
+            "vectorString": "CVSS:3.1/AV:L/AC:L/PR:H/UI:R/S:C/C:H/I:H/A:L",
+            "attackVector": "LOCAL",
+            "attackComplexity": "LOW",
+            "privilegesRequired": "HIGH",
+            "userInteraction": "REQUIRED",
+            "scope": "CHANGED",
+            "confidentialityImpact": "HIGH",
+            "integrityImpact": "HIGH",
+            "availabilityImpact": "LOW",
+            "baseScore": 7.7,
+            "baseSeverity": "HIGH"
+          },
+          "exploitabilityScore": 1.1,
+          "impactScore": 6.0
+        }
+      ],
+      "cvssMetricV30": [],
+      "cvssMetricV2": []
+    },
+    "weaknesses": [
+      {
+        "source": "cve@jetbrains.com",
+        "type": "Primary",
+        "description": [
+          {
+            "lang": "en",
+            "value": "CWE-23"
+          }
+        ]
+      }
+    ],
+    "configurations": [
+      {
+        "operator": "OR",
+        "negate": false,
+        "nodes": [
+          {
+            "cpeMatch": [
+              {
+                "vulnerable": true,
+                "criteria": "cpe:2.3:a:jetbrains:teamcity:*:*:*:*:*:*:*:*",
+                "matchCriteriaId": "7c818218-6435-4393-97d5-a1b3616f458b",
+                "versionStartIncluding": "0",
+                "versionEndExcluding": "2025.07"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "vendorComments": [],
+    "cveTags": []
+  },
+  {
+    "id": "CVE-2025-54530",
+    "sourceIdentifier": "cve@jetbrains.com",
+    "vulnStatus": "Received",
+    "published": "2025-07-28T17:15:32.380",
+    "lastModified": "2025-07-28T17:15:32.380",
+    "descriptions": [
+      {
+        "lang": "en",
+        "value": "In JetBrains TeamCity before 2025.07 privilege escalation was possible due to incorrect directory permissions"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.jetbrains.com/privacy-security/issues-fixed/",
+        "source": "cve@jetbrains.com",
+        "tags": []
+      }
+    ],
+    "metrics": {
+      "cvssMetricV40": [],
+      "cvssMetricV31": [
+        {
+          "source": "cve@jetbrains.com",
+          "type": "Secondary",
+          "cvssData": {
+            "version": "3.1",
+            "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:N",
+            "attackVector": "LOCAL",
+            "attackComplexity": "HIGH",
+            "privilegesRequired": "LOW",
+            "userInteraction": "NONE",
+            "scope": "CHANGED",
+            "confidentialityImpact": "HIGH",
+            "integrityImpact": "HIGH",
+            "availabilityImpact": "NONE",
+            "baseScore": 7.5,
+            "baseSeverity": "HIGH"
+          },
+          "exploitabilityScore": 1.1,
+          "impactScore": 5.8
+        }
+      ],
+      "cvssMetricV30": [],
+      "cvssMetricV2": []
+    },
+    "weaknesses": [
+      {
+        "source": "cve@jetbrains.com",
+        "type": "Primary",
+        "description": [
+          {
+            "lang": "en",
+            "value": "CWE-276"
+          }
+        ]
+      }
+    ],
+    "configurations": [
+      {
+        "operator": "OR",
+        "negate": false,
+        "nodes": [
+          {
+            "cpeMatch": [
+              {
+                "vulnerable": true,
+                "criteria": "cpe:2.3:a:jetbrains:teamcity:*:*:*:*:*:*:*:*",
+                "matchCriteriaId": "03128050-0fb0-405b-b132-ce7902dfc53f",
+                "versionStartIncluding": "0",
+                "versionEndExcluding": "2025.07"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "vendorComments": [],
+    "cveTags": []
+  },
+  {
+    "id": "CVE-2025-54528",
+    "sourceIdentifier": "cve@jetbrains.com",
+    "vulnStatus": "Received",
+    "published": "2025-07-28T17:15:31.970",
+    "lastModified": "2025-07-28T17:15:31.970",
+    "descriptions": [
+      {
+        "lang": "en",
+        "value": "In JetBrains TeamCity before 2025.07 a CSRF was possible in GitHub App connection flow"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.jetbrains.com/privacy-security/issues-fixed/",
+        "source": "cve@jetbrains.com",
+        "tags": []
+      }
+    ],
+    "metrics": {
+      "cvssMetricV40": [],
+      "cvssMetricV31": [
+        {
+          "source": "cve@jetbrains.com",
+          "type": "Secondary",
+          "cvssData": {
+            "version": "3.1",
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
+            "attackVector": "NETWORK",
+            "attackComplexity": "LOW",
+            "privilegesRequired": "NONE",
+            "userInteraction": "REQUIRED",
+            "scope": "UNCHANGED",
+            "confidentialityImpact": "LOW",
+            "integrityImpact": "LOW",
+            "availabilityImpact": "NONE",
+            "baseScore": 5.4,
+            "baseSeverity": "MEDIUM"
+          },
+          "exploitabilityScore": 2.8,
+          "impactScore": 2.5
+        }
+      ],
+      "cvssMetricV30": [],
+      "cvssMetricV2": []
+    },
+    "weaknesses": [
+      {
+        "source": "cve@jetbrains.com",
+        "type": "Primary",
+        "description": [
+          {
+            "lang": "en",
+            "value": "CWE-352"
+          }
+        ]
+      }
+    ],
+    "configurations": [
+      {
+        "operator": "OR",
+        "negate": false,
+        "nodes": [
+          {
+            "cpeMatch": [
+              {
+                "vulnerable": true,
+                "criteria": "cpe:2.3:a:jetbrains:teamcity:*:*:*:*:*:*:*:*",
+                "matchCriteriaId": "671e0861-ea2b-4fbf-bb07-754277d581ae",
+                "versionStartIncluding": "0",
+                "versionEndExcluding": "2025.07"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "vendorComments": [],
+    "cveTags": []
+  },
+  {
+    "id": "CVE-2025-54527",
+    "sourceIdentifier": "cve@jetbrains.com",
+    "vulnStatus": "Received",
+    "published": "2025-07-28T17:15:31.753",
+    "lastModified": "2025-07-28T17:15:31.753",
+    "descriptions": [
+      {
+        "lang": "en",
+        "value": "In JetBrains YouTrack before 2025.2.86935, \n2025.2.87167, \n2025.3.87341, \n2025.3.87344 improper iframe configuration in widget sandbox allows popups to bypass security restrictions"
+      }
+    ],
+    "references": [
+      {
+        "url": "https://www.jetbrains.com/privacy-security/issues-fixed/",
+        "source": "cve@jetbrains.com",
+        "tags": []
+      }
+    ],
+    "metrics": {
+      "cvssMetricV40": [],
+      "cvssMetricV31": [
+        {
+          "source": "cve@jetbrains.com",
+          "type": "Secondary",
+          "cvssData": {
+            "version": "3.1",
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "attackVector": "NETWORK",
+            "attackComplexity": "LOW",
+            "privilegesRequired": "NONE",
+            "userInteraction": "REQUIRED",
+            "scope": "CHANGED",
+            "confidentialityImpact": "LOW",
+            "integrityImpact": "LOW",
+            "availabilityImpact": "NONE",
+            "baseScore": 6.1,
+            "baseSeverity": "MEDIUM"
+          },
+          "exploitabilityScore": 2.8,
+          "impactScore": 2.7
+        }
+      ],
+      "cvssMetricV30": [],
+      "cvssMetricV2": []
+    },
+    "weaknesses": [
+      {
+        "source": "cve@jetbrains.com",
+        "type": "Primary",
+        "description": [
+          {
+            "lang": "en",
+            "value": "CWE-1021"
+          }
+        ]
+      }
+    ],
+    "configurations": [
+      {
+        "operator": "OR",
+        "negate": false,
+        "nodes": [
+          {
+            "cpeMatch": [
+              {
+                "vulnerable": true,
+                "criteria": "cpe:2.3:a:jetbrains:youtrack:*:*:*:*:*:*:*:*",
+                "matchCriteriaId": "e6d1916d-f2c1-4aa2-831c-5fabc415370c",
+                "versionStartIncluding": "0",
+                "versionEndExcluding": "2025.2.86935, \n2025.2.87167, \n2025.3.87341, \n2025.3.87344"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "vendorComments": [],
+    "cveTags": []
+  },
+  {
+    "id": "CVE-2025-54455",
+    "sourceIdentifier": "PSIRT@samsung.com",
+    "vulnStatus": "Analyzed",
+    "published": "2025-07-23T06:15:28.083",
+    "lastModified": "2025-07-28T17:25:40.427",
+    "descriptions": [
+      {
+        "lang": "en",
+        "value": "Use of Hard-coded Credentials vulnerability in Samsung Electronics MagicINFO 9 Server allows Authentication Bypass.This issue affects MagicINFO 9 Server: less than 21.1080.0."
+      }
+    ],
+    "references": [
+      {
+        "url": "https://security.samsungtv.com/securityUpdates",
+        "source": "PSIRT@samsung.com",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "metrics": {
+      "cvssMetricV40": [],
+      "cvssMetricV31": [
+        {
+          "source": "PSIRT@samsung.com",
+          "type": "Secondary",
+          "cvssData": {
+            "version": "3.1",
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+            "attackVector": "NETWORK",
+            "attackComplexity": "LOW",
+            "privilegesRequired": "NONE",
+            "userInteraction": "NONE",
+            "scope": "UNCHANGED",
+            "confidentialityImpact": "HIGH",
+            "integrityImpact": "HIGH",
+            "availabilityImpact": "NONE",
+            "baseScore": 9.1,
+            "baseSeverity": "CRITICAL"
+          },
+          "exploitabilityScore": 3.9,
+          "impactScore": 5.2
+        },
+        {
+          "source": "nvd@nist.gov",
+          "type": "Primary",
+          "cvssData": {
+            "version": "3.1",
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "attackVector": "NETWORK",
+            "attackComplexity": "LOW",
+            "privilegesRequired": "NONE",
+            "userInteraction": "NONE",
+            "scope": "UNCHANGED",
+            "confidentialityImpact": "HIGH",
+            "integrityImpact": "HIGH",
+            "availabilityImpact": "HIGH",
+            "baseScore": 9.8,
+            "baseSeverity": "CRITICAL"
+          },
+          "exploitabilityScore": 3.9,
+          "impactScore": 5.9
+        }
+      ],
+      "cvssMetricV30": [],
+      "cvssMetricV2": []
+    },
+    "weaknesses": [
+      {
+        "source": "PSIRT@samsung.com",
+        "type": "Secondary",
+        "description": [
+          {
+            "lang": "en",
+            "value": "CWE-798"
+          }
+        ]
+      }
+    ],
+    "configurations": [
+      {
+        "nodes": [
+          {
+            "operator": "OR",
+            "negate": false,
+            "cpeMatch": [
+              {
+                "vulnerable": true,
+                "criteria": "cpe:2.3:a:samsung:magicinfo_9_server:*:*:*:*:*:*:*:*",
+                "matchCriteriaId": "7f55e93e-e72f-493f-9693-f36bae4491be",
+                "versionEndExcluding": "21.1080.0"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "vendorComments": [],
+    "cveTags": []
+  }
+]
